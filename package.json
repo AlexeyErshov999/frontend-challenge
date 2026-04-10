@@ -1,0 +1,27 @@
+{
+  "name": "frontend-challenge",
+  "version": "1.0.0",
+  "description": "Test challenge for VK internship, Uchi.ru team",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "author": "Alexey Ershov",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "sass": "^1.99.0",
+    "typescript": "^6.0.2",
+    "vite": "^8.0.8"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.11.2",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "react-redux": "^9.2.0",
+    "react-router-dom": "^7.14.0"
+  }
+}
