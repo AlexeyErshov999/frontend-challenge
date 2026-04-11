@@ -8,7 +8,8 @@ import {
 } from "../../store/slices/catsSlice";
 import styles from "./GalleryPage.module.scss";
 import { CatCard } from "../../components/CatCard/CatCard";
-import { SkeletonLoader } from "../../components/Loader/SkeletonLoader";
+import { SkeletonLoader } from "../../components/SkeletonLoader/SkeletonLoader";
+import { ErrorSnackbar } from "../../components/ErrorSnackbar/ErrorSnackbar";
 
 export const GalleryPage = () => {
   const dispatch = useAppDispatch();
@@ -26,15 +27,14 @@ export const GalleryPage = () => {
     return <SkeletonLoader />;
   }
 
-  if (error) {
-    return <h1>Error...</h1>;
-  }
-
   return (
-    <div className={styles.gallery}>
-      {cats.map((cat) => (
-        <CatCard key={cat.id} {...cat} />
-      ))}
-    </div>
+    <>
+      <div className={styles.gallery}>
+        {cats.map((cat) => (
+          <CatCard key={cat.id} {...cat} />
+        ))}
+      </div>
+      <ErrorSnackbar error={error} />
+    </>
   );
 };

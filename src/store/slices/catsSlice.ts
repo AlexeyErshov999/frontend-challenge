@@ -23,11 +23,11 @@ export const fetchCatsThunk = createAsyncThunk(
   "cats/fetchCats",
   async (page: number, { rejectWithValue }) => {
     try {
-      const data = await fetchCats(page);
       await new Promise((resolve) => setTimeout(resolve, 1000));
+      const data = await fetchCats(page);
       return data as ICatImage[];
     } catch (error) {
-      return rejectWithValue(`fetchCatsThunk error: ${error}`);
+      return rejectWithValue(`Failed to get cats. Please, try again later)`);
     }
   },
 );
