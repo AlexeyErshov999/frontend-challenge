@@ -1,0 +1,25 @@
+.tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $text-secondary;
+  background-color: $inactive-tab;
+  padding: $tab-padding-lg;
+
+  &.active {
+    color: $text-primary;
+    background-color: $active-tab;
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .tab {
+    padding: $tab-padding-md;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .tab {
+    padding: $tab-padding-sm;
+  }
+}
