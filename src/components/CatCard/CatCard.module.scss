@@ -1,17 +1,61 @@
 .card {
+  position: relative;
   inline-size: $image-size;
   block-size: $image-size;
   overflow: hidden;
   transition: transform $transform-time ease;
 
-  img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-  }
-
   &:hover {
     transform: scale($image-hover-size / $image-size);
+  }
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.likeWrapper {
+  position: absolute;
+  right: 15px;
+  bottom: 20px;
+  width: $like-size;
+  height: $like-size;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .like {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity $transform-time ease,
+      visibility $transform-time ease;
+  }
+}
+
+.card:hover .likeWrapper .like {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .card {
+    inline-size: $image-size-mobile;
+    block-size: $image-size-mobile;
+  }
+
+  .likeWrapper {
+    width: $like-size-mobile;
+    height: $like-size-mobile;
+    right: 10px;
+    bottom: 15px;
   }
 }

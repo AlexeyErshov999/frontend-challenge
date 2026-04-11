@@ -25,9 +25,9 @@ export const fetchCatsThunk = createAsyncThunk(
   async (page: number, { rejectWithValue }) => {
     try {
       await new Promise((resolve) => setTimeout(resolve, 1000));
-      const data = await fetchCats(page);
-      return data as ICatImage[];
-      //   return mockData as ICatImage[];
+      // const data = await fetchCats(page);
+      // return data as ICatImage[];
+      return mockData as ICatImage[];
     } catch (error) {
       return rejectWithValue(`Failed to get cats. Please, try again later)`);
     }

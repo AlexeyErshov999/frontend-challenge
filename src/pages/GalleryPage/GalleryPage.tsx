@@ -6,10 +6,9 @@ import {
   selectCatsError,
   selectCatsLoading,
 } from "../../store/slices/catsSlice";
-import styles from "./GalleryPage.module.scss";
-import { CatCard } from "../../components/CatCard/CatCard";
 import { SkeletonLoader } from "../../components/SkeletonLoader/SkeletonLoader";
 import { ErrorSnackbar } from "../../components/ErrorSnackbar/ErrorSnackbar";
+import { Gallery } from "../../components/Gallery/Gallery";
 
 export const GalleryPage = () => {
   const dispatch = useAppDispatch();
@@ -29,11 +28,7 @@ export const GalleryPage = () => {
 
   return (
     <>
-      <div className={styles.gallery}>
-        {cats.map((cat) => (
-          <CatCard key={cat.id} {...cat} />
-        ))}
-      </div>
+      <Gallery cats={cats} />
       <ErrorSnackbar error={error} />
     </>
   );
