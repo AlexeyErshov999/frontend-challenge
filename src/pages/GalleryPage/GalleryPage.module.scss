@@ -4,21 +4,11 @@
   align-items: center;
   flex-wrap: wrap;
   gap: $gallery-gap-lg;
-  padding-inline: $main-content-padding-inline-lg;
-  padding-block: $main-content-padding-block-lg;
-}
-
-.card {
-    inline-size: $image-size;
-    block-size: $image-size;
-    object-fit: cover;
 }
 
 @media (max-width: $breakpoint-tablet) {
   .gallery {
     gap: $gallery-gap-md;
-    padding-inline: $main-content-padding-inline-md;
-    padding-block: $main-content-padding-block-md;
   }
 }
 
@@ -26,7 +16,5 @@
   .gallery {
     flex-direction: column;
     gap: $gallery-gap-sm;
-    padding-inline: $main-content-padding-inline-sm;
-    padding-block: $main-content-padding-block-sm;
   }
 }

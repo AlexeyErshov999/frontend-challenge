@@ -7,6 +7,9 @@ import {
   selectCatsLoading,
 } from "../../store/slices/catsSlice";
 import styles from "./GalleryPage.module.scss";
+import { CatCard } from "../../components/CatCard/CatCard";
+import { SkeletonLoader } from "../../components/SkeletonLoader/SkeletonLoader";
+import { ErrorSnackbar } from "../../components/ErrorSnackbar/ErrorSnackbar";
 
 export const GalleryPage = () => {
   const dispatch = useAppDispatch();
@@ -21,23 +24,17 @@ export const GalleryPage = () => {
   }, []);
 
   if (loading) {
-    return <h1>Loading...</h1>;
-  }
-
-  if (error) {
-    return <h1>Error...</h1>;
+    return <SkeletonLoader />;
   }
 
   return (
-    <div className={styles.gallery}>
-      {cats.map((cat) => (
-        <img
-          key={cat.id}
-          src={cat.url}
-          alt={"Изображение котика"}
-          className={styles.card}
-        />
-      ))}
-    </div>
+    <>
+      <div className={styles.gallery}>
+        {cats.map((cat) => (
+          <CatCard key={cat.id} {...cat} />
+        ))}
+      </div>
+      <ErrorSnackbar error={error} />
+    </>
   );
 };

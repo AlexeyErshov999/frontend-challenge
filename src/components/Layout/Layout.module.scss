@@ -13,6 +13,11 @@
   padding-inline-start: 60px;
 }
 
+.mainContent {
+  padding-inline: $main-content-padding-inline-lg;
+  padding-block: $main-content-padding-block-lg;
+}
+
 @media (max-width: $breakpoint-tablet) {
   .navbar {
     padding-inline-start: 40;
@@ -21,11 +26,21 @@
   .tab {
     padding: $tab-padding-md;
   }
+
+  .mainContent {
+    padding-inline: $main-content-padding-inline-md;
+    padding-block: $main-content-padding-block-md;
+  }
 }
 
 @media (max-width: $breakpoint-mobile) {
   .navbar {
     justify-content: space-around;
     padding-inline-start: 0;
+  }
+
+  .mainContent {
+    padding-inline: $main-content-padding-inline-sm;
+    padding-block: $main-content-padding-block-sm;
   }
 }
