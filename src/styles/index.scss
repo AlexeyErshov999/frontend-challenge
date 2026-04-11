@@ -1,4 +1,14 @@
-@use './reset.scss';
-@use './colors.scss';
-@use './sizes.scss';
-@use './breakpoints.scss';
+@import "reset";
+@import "colors";
+@import "sizes";
+@import "breakpoints";
+
+html {
+  scrollbar-gutter: stable;
+}
+
+body {
+  font-size: $font-size-main;
+  line-height: $line-height-main;
+  letter-spacing: $letter-spacing-main;
+}
