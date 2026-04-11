@@ -3,6 +3,8 @@
 @import "sizes";
 @import "breakpoints";
 
+$transform-time: 0.3s;
+
 html {
   scrollbar-gutter: stable;
 }

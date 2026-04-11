@@ -2,6 +2,7 @@ import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../hooks";
 import { ICatImage } from "../../types/cats.types";
 import { DEFAULT_CATS_LIMIT, fetchCats } from "../../api/catsApi";
+import { mockData } from "../../mockdata";
 
 interface CatsState {
   cats: ICatImage[];
@@ -26,6 +27,7 @@ export const fetchCatsThunk = createAsyncThunk(
       await new Promise((resolve) => setTimeout(resolve, 1000));
       const data = await fetchCats(page);
       return data as ICatImage[];
+      //   return mockData as ICatImage[];
     } catch (error) {
       return rejectWithValue(`Failed to get cats. Please, try again later)`);
     }

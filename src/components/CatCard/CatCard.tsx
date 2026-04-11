@@ -3,11 +3,8 @@ import styles from "./CatCard.module.scss";
 
 export const CatCard = ({ id, url }: ICatImage) => {
   return (
-    <img
-      key={id}
-      src={url}
-      alt={"Изображение котика"}
-      className={styles.card}
-    />
+    <div key={id} className={styles.card}>
+      <img src={url} alt="Изображение котика" />
+    </div>
   );
 };
