@@ -17,9 +17,3 @@
     padding: $tab-padding-md;
   }
 }
-
-@media (max-width: $breakpoint-mobile) {
-  .tab {
-    padding: $tab-padding-sm;
-  }
-}
