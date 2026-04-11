@@ -7,6 +7,8 @@ import {
   selectCatsLoading,
 } from "../../store/slices/catsSlice";
 import styles from "./GalleryPage.module.scss";
+import { CatCard } from "../../components/CatCard/CatCard";
+import { SkeletonLoader } from "../../components/Loader/SkeletonLoader";
 
 export const GalleryPage = () => {
   const dispatch = useAppDispatch();
@@ -21,7 +23,7 @@ export const GalleryPage = () => {
   }, []);
 
   if (loading) {
-    return <h1>Loading...</h1>;
+    return <SkeletonLoader />;
   }
 
   if (error) {
@@ -31,12 +33,7 @@ export const GalleryPage = () => {
   return (
     <div className={styles.gallery}>
       {cats.map((cat) => (
-        <img
-          key={cat.id}
-          src={cat.url}
-          alt={"Изображение котика"}
-          className={styles.card}
-        />
+        <CatCard key={cat.id} {...cat} />
       ))}
     </div>
   );

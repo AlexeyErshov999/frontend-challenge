@@ -29,7 +29,7 @@ export const Layout = () => {
           isActive={activeTab === TABS.FAVORITES}
         />
       </nav>
-      <main>
+      <main className={styles.mainContent}>
         <Outlet />
       </main>
     </div>
