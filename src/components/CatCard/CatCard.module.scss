@@ -1,12 +1,17 @@
 .card {
   position: relative;
-  inline-size: $image-size;
-  block-size: $image-size;
+  width: 100%;
+  max-width: $image-size;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   transition: transform $transform-time ease;
+  margin: 0 auto;
 
-  &:hover {
-    transform: scale($image-hover-size / $image-size);
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      transform: scale($image-hover-size / $image-size);
+      box-shadow: $shadow;
+    }
   }
 }
 
@@ -35,9 +40,7 @@
     cursor: pointer;
     opacity: 0;
     visibility: hidden;
-    transition:
-      opacity $transform-time ease,
-      visibility $transform-time ease;
+    transition: opacity $transform-time ease;
   }
 }
 
@@ -48,8 +51,7 @@
 
 @media (max-width: $breakpoint-mobile) {
   .card {
-    inline-size: $image-size-mobile;
-    block-size: $image-size-mobile;
+    max-width: $image-size-mobile;
   }
 
   .likeWrapper {
@@ -57,5 +59,10 @@
     height: $like-size-mobile;
     right: 10px;
     bottom: 15px;
+  }
+
+  .card:active .likeWrapper .like {
+    opacity: 1;
+    visibility: visible;
   }
 }

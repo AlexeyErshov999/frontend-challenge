@@ -2,7 +2,6 @@ import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../hooks";
 import { ICatImage } from "../../types/cats.types";
 import { DEFAULT_CATS_LIMIT, fetchCats } from "../../api/catsApi";
-import { mockData } from "../../mockdata";
 
 interface CatsState {
   cats: ICatImage[];

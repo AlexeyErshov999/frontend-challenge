@@ -1,20 +1,28 @@
 .gallery {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(min($image-size-mobile, 100%), $image-size)
+  );
   gap: $gallery-gap-lg;
+  justify-content: center;
+  align-items: start;
 }
 
 @media (max-width: $breakpoint-tablet) {
   .gallery {
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(min($image-size-mobile, 100%), $image-size-mobile)
+    );
     gap: $gallery-gap-md;
   }
 }
 
 @media (max-width: $breakpoint-mobile) {
   .gallery {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: 1fr;
     gap: $gallery-gap-sm;
+    justify-items: center;
   }
 }
