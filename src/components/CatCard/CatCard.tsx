@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import {
   addFavorite,
@@ -11,7 +11,8 @@ import heartIcon from "../../assets/icons/heart.svg";
 import heartFilledIcon from "../../assets/icons/heart_liked.svg";
 import heartHoveredIcon from "../../assets/icons/heart_hovered.svg";
 
-export const CatCard = ({ id, url }: ICatImage) => {
+// Использую memo, чтобы не перерисовывать уже отображенные карточки
+export const CatCard = memo(({ id, url }: ICatImage) => {
   const dispatch = useAppDispatch();
   const isFavorite = useAppSelector((state) => selectIsFavorite(state, id));
   const [isHovered, setIsHovered] = useState(false);
@@ -46,4 +47,4 @@ export const CatCard = ({ id, url }: ICatImage) => {
       </div>
     </div>
   );
-};
+});
