@@ -44,9 +44,18 @@
   }
 }
 
-.card:hover .likeWrapper .like {
-  opacity: 1;
-  visibility: visible;
+@media (hover: hover) and (pointer: fine) {
+  .card:hover .likeWrapper .like {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@media (pointer: coarse) {
+  .likeWrapper .like {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 @media (max-width: $breakpoint-mobile) {
@@ -59,10 +68,5 @@
     height: $like-size-mobile;
     right: 10px;
     bottom: 15px;
-  }
-
-  .card:active .likeWrapper .like {
-    opacity: 1;
-    visibility: visible;
   }
 }
