@@ -1,0 +1,20 @@
+.gallery {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: $gallery-gap-lg;
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .gallery {
+    gap: $gallery-gap-md;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .gallery {
+    flex-direction: column;
+    align-items: center;
+    gap: $gallery-gap-sm;
+  }
+}

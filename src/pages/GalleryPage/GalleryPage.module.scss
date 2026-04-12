@@ -1,20 +1,13 @@
-.gallery {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: $gallery-gap-lg;
+.trigger {
+  text-align: center;
+  color: $text-dark;
+  margin: 32px 0 16px;
+  padding: 8px 0;
 }
 
-@media (max-width: $breakpoint-tablet) {
-  .gallery {
-    gap: $gallery-gap-md;
-  }
-}
-
-@media (max-width: $breakpoint-mobile) {
-  .gallery {
-    flex-direction: column;
-    gap: $gallery-gap-sm;
+@media (max-width < $breakpoint-mobile) {
+  .trigger {
+    margin: 24px 0 12px;
+    padding: 4px 0;
   }
 }

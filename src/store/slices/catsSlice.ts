@@ -8,7 +8,6 @@ interface CatsState {
   cats: ICatImage[];
   loading: boolean;
   error: string | null;
-  page: number;
   hasMore: boolean;
 }
 
@@ -16,7 +15,6 @@ const initialState: CatsState = {
   cats: [],
   loading: false,
   error: null,
-  page: 0,
   hasMore: true,
 };
 
@@ -24,12 +22,10 @@ export const fetchCatsThunk = createAsyncThunk(
   "cats/fetchCats",
   async (page: number, { rejectWithValue }) => {
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
       const data = await fetchCats(page);
       return data as ICatImage[];
-      //   return mockData as ICatImage[];
     } catch (error) {
-      return rejectWithValue(`Failed to get cats. Please, try again later)`);
+      return rejectWithValue(`Не удалось получить котиков. Попробуйте позже.`);
     }
   },
 );
@@ -49,7 +45,6 @@ const catsSlice = createSlice({
         (state, action: PayloadAction<ICatImage[]>) => {
           state.loading = false;
           state.cats.push(...action.payload);
-          state.page += 1;
 
           if (action.payload.length < DEFAULT_CATS_LIMIT) {
             state.hasMore = false;
