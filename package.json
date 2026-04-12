@@ -2,10 +2,13 @@
   "name": "frontend-challenge",
   "version": "1.0.0",
   "description": "Test challenge for VK internship, Uchi.ru team",
+  "homepage": "https://alexeyershov999.github.io/frontend-challenge",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "author": "Alexey Ershov",
   "license": "ISC",
@@ -13,6 +16,7 @@
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
+    "gh-pages": "^6.3.0",
     "sass": "^1.99.0",
     "typescript": "^6.0.2",
     "vite": "^8.0.8"
