@@ -6,12 +6,14 @@ interface IGalleryProps {
   cats: ICatImage[];
 }
 
+// В консоль падают ошибки о совпадении id у некоторых пришедших котиков
+// Поэтому сделал составной ключ
 export const Gallery = ({ cats }: IGalleryProps) => {
   return (
     <>
       <div className={styles.gallery}>
-        {cats.map((cat) => (
-          <CatCard key={cat.id} {...cat} />
+        {cats.map((cat, i) => (
+          <CatCard key={`${cat.id}-${i}`} {...cat} />
         ))}
       </div>
     </>

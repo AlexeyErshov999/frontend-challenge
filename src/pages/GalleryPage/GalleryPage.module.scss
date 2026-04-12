@@ -1,0 +1,13 @@
+.trigger {
+  text-align: center;
+  color: $text-dark;
+  margin: 32px 0 16px;
+  padding: 8px 0;
+}
+
+@media (max-width < $breakpoint-mobile) {
+  .trigger {
+    margin: 24px 0 12px;
+    padding: 4px 0;
+  }
+}
