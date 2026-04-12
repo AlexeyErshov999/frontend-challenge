@@ -21,8 +21,6 @@
 - **Vite**
 - **SCSS (Sass)**
 - **classnames**
-- **gh-pages**
-- **React Redux**
 
 ## 💡 Почему именно эти технологии?
 
