@@ -5,7 +5,7 @@ export const useInfiniteScroll = ({
   hasMore,
   isLoading,
   onLoadMore,
-  threshold = 0.5,
+  threshold = 0.1,
 }: UseInfiniteScrollProps) => {
   const loadingTriggerRef = useRef<HTMLDivElement>(null);
 

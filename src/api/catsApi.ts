@@ -2,11 +2,11 @@ import { axiosInstance } from "./axiosInstance";
 import { ENDPOINTS } from "./endpoints";
 import { ICatImage } from "../types/cats.types";
 
-export const DEFAULT_CATS_LIMIT = 20;
+export const DEFAULT_CATS_LIMIT = 10;
 
 export const fetchCats = async (
   page: number = 0,
-  limit: number = DEFAULT_CATS_LIMIT,
+  limit: number = 20,
   order: "ASC" | "DESC" = "ASC",
 ): Promise<ICatImage[]> => {
   try {
