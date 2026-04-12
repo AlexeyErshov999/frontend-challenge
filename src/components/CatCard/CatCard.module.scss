@@ -1,9 +1,11 @@
 .card {
   position: relative;
-  inline-size: $image-size;
-  block-size: $image-size;
+  width: 100%;
+  max-width: $image-size;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   transition: transform $transform-time ease;
+  margin: 0 auto;
 
   @media (hover: hover) and (pointer: fine) {
     &:hover {
@@ -42,31 +44,14 @@
   }
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .card:hover .likeWrapper .like {
-    opacity: 1;
-    visibility: visible;
-  }
-}
-
-@media (pointer: coarse) {
-  .likeWrapper .like {
-    opacity: 1;
-    visibility: visible;
-  }
-}
-
-@media (pointer: coarse) and (max-width: 1024px) {
-  .likeWrapper .like {
-    opacity: 1;
-    visibility: visible;
-  }
+.card:hover .likeWrapper .like {
+  opacity: 1;
+  visibility: visible;
 }
 
 @media (max-width: $breakpoint-mobile) {
   .card {
-    inline-size: $image-size-mobile;
-    block-size: $image-size-mobile;
+    max-width: $image-size-mobile;
   }
 
   .likeWrapper {
@@ -74,5 +59,10 @@
     height: $like-size-mobile;
     right: 10px;
     bottom: 15px;
+  }
+
+  .card:active .likeWrapper .like {
+    opacity: 1;
+    visibility: visible;
   }
 }
